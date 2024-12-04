@@ -1,0 +1,163 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Dandy's World 0.20", "Default")
+local tab = DrRayLibrary.newTab("🌐 • Update Logs", "rbxassetid://130669401533737")
+tab.newButton("Added:", " ", function()
+    print('Hello!')
+end)
+tab.newButton("🏡 • Main", " ", function()
+    print('Hello!')
+end)
+tab.newButton("🎚 • Auto Skill check", " ", function()
+    print('Hello!')
+end)
+tab.newButton("🕺• Animations", "at work !!⚠️", function()
+    print('Hello!')
+end)
+tab.newButton("📒 • Version 0.25", "Third Version!!", function()
+    print('Hello!')
+end)
+local tab = DrRayLibrary.newTab("🏡 • Main", "18335844068")
+tab.newButton("🔋 • Boost Yourself", "Needs Shelly", function()
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = CFrame.new(-179.29843139648438, 146.2311248779297, -164.61495971679688) * CFrame.Angles(3.1415927410125732, 0.4017193913459778, -3.141592502593994),
+    [3] = game:GetService("Players").LocalPlayer.Character
+}
+
+game:GetService("ReplicatedStorage").Events.AbilityEvent:InvokeServer(unpack(args))
+    print('Hello!')
+end)
+tab.newButton("🍓 • Heal Yourself", "Needs Sprout", function()
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = CFrame.new(-179.29843139648438, 146.2311248779297, -164.61495971679688) * CFrame.Angles(3.1415927410125732, 0.4017193913459778, -3.141592502593994),
+    [3] = game:GetService("Players").LocalPlayer.Character
+}
+
+game:GetService("ReplicatedStorage").Events.AbilityEvent:InvokeServer(unpack(args))
+    print('Hello!')
+end)
+tab.newButton("🏃‍♂️‍➡️ • Speed hack", "Use:]", function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+while true do
+    character.Humanoid.WalkSpeed = 30
+    wait(0)
+end
+    print('Hello!')
+end)
+tab.newButton("🎚 • Auto Skill check", " ", function()
+• -- Place this script in StarterPlayerScripts 
+•  
+• local player = game.Players.LocalPlayer 
+• local VirtualInputManager = game:GetService('VirtualInputManager') 
+•  
+• -- Define the tolerance range 
+• local TOLERANCE = 5 -- Adjust this value as needed 
+•  
+• -- Function to handle skill check alignment 
+• local function handleSkillCheck() 
+• local screenGui = player.PlayerGui:FindFirstChild("ScreenGui") 
+• if not screenGui then 
+• return 
+• end 
+•  
+• local menu = screenGui:FindFirstChild("Menu") 
+• if not menu then 
+• return 
+• end 
+•  
+• local skillCheckFrame = menu:FindFirstChild("SkillCheckFrame") 
+• if not skillCheckFrame then 
+• return 
+• end 
+•  
+• -- Function to perform the check when skill check frame is visible 
+• local function onVisibilityChanged() 
+• if skillCheckFrame.Visible then 
+• local marker = skillCheckFrame:FindFirstChild("Marker") 
+• local goldArea = skillCheckFrame:FindFirstChild("GoldArea") 
+•  
+• if marker and goldArea then 
+• local markerPosition = marker.AbsolutePosition 
+• local goldAreaPosition = goldArea.AbsolutePosition 
+• local goldAreaSize = goldArea.AbsoluteSize 
+•  
+• -- Check if the Marker is within the bounds of the GoldArea 
+• if markerPosition.X >= goldAreaPosition.X and markerPosition.X <= (goldAreaPosition.X + goldAreaSize.X) + TOLERANCE then 
+• -- Send spacebar press event 
+• VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game) 
+• end 
+• end 
+• end 
+• end 
+•  
+• -- Connect to the VisibilityChanged event 
+• skillCheckFrame.Changed:Connect(function(property) 
+• if property == "Visible" then 
+• onVisibilityChanged() 
+• end 
+• end) 
+•  
+• -- Detect changes in Marker and GoldArea positions 
+• local marker = skillCheckFrame:FindFirstChild("Marker") 
+• local goldArea = skillCheckFrame:FindFirstChild("GoldArea") 
+•  
+• if marker then 
+• marker.Changed:Connect(function(property) 
+• if property == "AbsolutePosition" then 
+• onVisibilityChanged() 
+• end 
+• end) 
+• end 
+•  
+• if goldArea then 
+• goldArea.Changed:Connect(function(property) 
+• if property == "AbsolutePosition" or property == "AbsoluteSize" then 
+• onVisibilityChanged() 
+• end 
+• end) 
+• end 
+• end 
+•  
+• -- Start handling the skill check 
+• handleSkillCheck()
+
+    print('Hello!')
+end)
+local tab = DrRayLibrary.newTab("🤝 • Another Scripts", "ImageIdHere")
+tab.newButton("ThebinModMenu", "By RodeStriker", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RodeStriker/TheDandyBinModMenu/refs/heads/main/Testing", true))()
+    print('Hello!')
+end)
+tab.newButton("Glisten's animation closet", "By RodeStriker", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RodeStriker/TheDandyHelper/refs/heads/main/GAC"))()
+    print('Hello!')
+end)
+tab.newButton("Admin Panel 0.4", "Iriskaaaaa by Otvajni", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/VA4t52Ae"))()
+    print('Hello!')
+end)
+local tab = DrRayLibrary.newTab("🕺 • Animations", "18335844068")
+tab.newButton("We are doing it, be patient ⚠️", "Prints Hello!", function()
+    print('Hello!')
+end)
+local tab = DrRayLibrary.newTab("⚙️ • Settings", "14134158045")
+tab.newButton("Rejoin", "Rejoin the game", function()
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function teleportToSameServer()
+    local placeId = game.PlaceId
+    local jobId = game.JobId
+    
+    wait(1)
+    
+    TeleportService:TeleportToPlaceInstance(placeId, jobId, player)
+end
+
+teleportToSameServer()
+    print('Hello!')
+end)
